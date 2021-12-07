@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "w95";
+    src: url("../fonts/MS_sans_serif.ttf") format("truetype");
+}
+@font-face {
+    font-family: "w95";
+    src: url("../fonts/MS_sans_serif_bold.ttf") format("truetype");
+    font-weight: bold;
+}
