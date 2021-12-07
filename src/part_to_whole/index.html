@@ -1,4 +1,8 @@
-import numpy as np
+<!DOCTYPE html>
+<head>
+  <title>part_to_whole.py</title>
+</head>
+<pre><code>import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib import rcParams
@@ -29,4 +33,4 @@ labels = ['Republicans', 'Independents', 'Democrats']
 patches = [mpatches.Patch(color=c, label=l) for c, l in zip(vax_colors, labels)]
 ax.legend(handles=patches, loc=(1.05, 0.78))
 
-plt.savefig('part-to-whole.png', transparent=False, dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig('part-to-whole.png', transparent=False, dpi=300, bbox_inches='tight', facecolor='white')</code></pre>
