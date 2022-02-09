@@ -9,17 +9,23 @@ slider.oninput = function() {
   let a = (1 <= this.value % 10) && (this.value % 10 <= 3)
   let b = (11 <= this.value % 100) && (this.value % 100 <= 13)
   let k = " Congress (" + (2*this.value + 1787) + "-" + (2*this.value + 1789) +  ")"
+  var t = ""
   if(a && !b) {
     if(this.value % 10 == 1) {
-      text.innerHTML = this.value + "st" + k;
+      t = this.value + "st" + k;
     } else if(this.value % 10 == 2) {
-      text.innerHTML = this.value + "nd" + k;
+      t = this.value + "nd" + k;
     } else {
-      text.innerHTML = this.value + "rd" + k;
+      t = this.value + "rd" + k;
     }
   } else {
-    text.innerHTML = this.value + "th" + k;
+    t = this.value + "th" + k;
   }
-  if(this.value)
+  if(this.value < 10) {
+    t = "  " + t;
+  } else if(this.value < 100) {
+    t = " " + t;
+  }
+  text.innerHTML = t;
   last = this.value;
 }

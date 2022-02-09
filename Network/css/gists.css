@@ -1,0 +1,8 @@
+body .gist .gist-data {
+  border-bottom: none;
+  background-color: transparent;
+}
+
+body .gist .gist-meta {
+  display: none;
+}
