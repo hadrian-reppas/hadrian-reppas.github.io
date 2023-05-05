@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">2.</strong> Functions</a></li><li class="chapter-item expanded "><a href="control-flow.html"><strong aria-hidden="true">3.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="built-in-functions.html" class="active"><strong aria-hidden="true">4.</strong> Built-in Functions</a></li><li class="chapter-item expanded "><a href="structs.html"><strong aria-hidden="true">5.</strong> Structs</a></li><li class="chapter-item expanded "><a href="globals.html"><strong aria-hidden="true">6.</strong> Globals</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">7.</strong> Imports</a></li><li class="chapter-item expanded "><a href="generics.html"><strong aria-hidden="true">8.</strong> Generics</a></li><li class="chapter-item expanded "><a href="let-statements.html"><strong aria-hidden="true">9.</strong> Let Statements</a></li><li class="chapter-item expanded "><a href="expressions.html"><strong aria-hidden="true">10.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="alloc.html"><strong aria-hidden="true">11.</strong> Allocations</a></li><li class="chapter-item expanded "><a href="assert-and-abort.html"><strong aria-hidden="true">12.</strong> Assertions</a></li><li class="chapter-item expanded "><a href="function-pointers.html"><strong aria-hidden="true">13.</strong> Function Pointers</a></li><li class="chapter-item expanded "><a href="the-standard-library.html"><strong aria-hidden="true">14.</strong> The Standard Library</a></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">15.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guessing-game.html"><strong aria-hidden="true">15.1.</strong> Guessing Game</a></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">15.2.</strong> Sorting</a></li><li class="chapter-item expanded "><a href="strings.html"><strong aria-hidden="true">15.3.</strong> Strings</a></li></ol></li><li class="chapter-item expanded "><a href="a-node.html"><strong aria-hidden="true">16.</strong> A Note on Transpilation</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">2.</strong> Functions</a></li><li class="chapter-item expanded "><a href="control-flow.html"><strong aria-hidden="true">3.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="built-in-functions.html" class="active"><strong aria-hidden="true">4.</strong> Built-in Functions</a></li><li class="chapter-item expanded "><a href="structs.html"><strong aria-hidden="true">5.</strong> Structs</a></li><li class="chapter-item expanded "><a href="globals.html"><strong aria-hidden="true">6.</strong> Globals</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">7.</strong> Imports</a></li><li class="chapter-item expanded "><a href="generics.html"><strong aria-hidden="true">8.</strong> Generics</a></li><li class="chapter-item expanded "><a href="let-statements.html"><strong aria-hidden="true">9.</strong> Let Statements</a></li><li class="chapter-item expanded "><a href="expressions.html"><strong aria-hidden="true">10.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="alloc.html"><strong aria-hidden="true">11.</strong> Allocations</a></li><li class="chapter-item expanded "><a href="assert-and-abort.html"><strong aria-hidden="true">12.</strong> Assertions</a></li><li class="chapter-item expanded "><a href="function-pointers.html"><strong aria-hidden="true">13.</strong> Function Pointers</a></li><li class="chapter-item expanded "><a href="the-standard-library.html"><strong aria-hidden="true">14.</strong> The Standard Library</a></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">15.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guessing-game.html"><strong aria-hidden="true">15.1.</strong> Guessing Game</a></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">15.2.</strong> Sorting</a></li><li class="chapter-item expanded "><a href="strings.html"><strong aria-hidden="true">15.3.</strong> Strings</a></li></ol></li><li class="chapter-item expanded "><a href="a-note.html"><strong aria-hidden="true">16.</strong> A Note on Transpilation</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -606,6 +606,20 @@ null on failure)</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -84,7 +84,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">2.</strong> Functions</a></li><li class="chapter-item expanded "><a href="control-flow.html"><strong aria-hidden="true">3.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="built-in-functions.html"><strong aria-hidden="true">4.</strong> Built-in Functions</a></li><li class="chapter-item expanded "><a href="structs.html"><strong aria-hidden="true">5.</strong> Structs</a></li><li class="chapter-item expanded "><a href="globals.html"><strong aria-hidden="true">6.</strong> Globals</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">7.</strong> Imports</a></li><li class="chapter-item expanded "><a href="generics.html"><strong aria-hidden="true">8.</strong> Generics</a></li><li class="chapter-item expanded "><a href="let-statements.html"><strong aria-hidden="true">9.</strong> Let Statements</a></li><li class="chapter-item expanded "><a href="expressions.html"><strong aria-hidden="true">10.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="alloc.html"><strong aria-hidden="true">11.</strong> Allocations</a></li><li class="chapter-item expanded "><a href="assert-and-abort.html"><strong aria-hidden="true">12.</strong> Assertions</a></li><li class="chapter-item expanded "><a href="function-pointers.html"><strong aria-hidden="true">13.</strong> Function Pointers</a></li><li class="chapter-item expanded "><a href="the-standard-library.html"><strong aria-hidden="true">14.</strong> The Standard Library</a></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">15.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guessing-game.html"><strong aria-hidden="true">15.1.</strong> Guessing Game</a></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">15.2.</strong> Sorting</a></li><li class="chapter-item expanded "><a href="strings.html"><strong aria-hidden="true">15.3.</strong> Strings</a></li></ol></li><li class="chapter-item expanded "><a href="a-node.html"><strong aria-hidden="true">16.</strong> A Note on Transpilation</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="functions.html"><strong aria-hidden="true">2.</strong> Functions</a></li><li class="chapter-item expanded "><a href="control-flow.html"><strong aria-hidden="true">3.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="built-in-functions.html"><strong aria-hidden="true">4.</strong> Built-in Functions</a></li><li class="chapter-item expanded "><a href="structs.html"><strong aria-hidden="true">5.</strong> Structs</a></li><li class="chapter-item expanded "><a href="globals.html"><strong aria-hidden="true">6.</strong> Globals</a></li><li class="chapter-item expanded "><a href="imports.html"><strong aria-hidden="true">7.</strong> Imports</a></li><li class="chapter-item expanded "><a href="generics.html"><strong aria-hidden="true">8.</strong> Generics</a></li><li class="chapter-item expanded "><a href="let-statements.html"><strong aria-hidden="true">9.</strong> Let Statements</a></li><li class="chapter-item expanded "><a href="expressions.html"><strong aria-hidden="true">10.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="alloc.html"><strong aria-hidden="true">11.</strong> Allocations</a></li><li class="chapter-item expanded "><a href="assert-and-abort.html"><strong aria-hidden="true">12.</strong> Assertions</a></li><li class="chapter-item expanded "><a href="function-pointers.html"><strong aria-hidden="true">13.</strong> Function Pointers</a></li><li class="chapter-item expanded "><a href="the-standard-library.html"><strong aria-hidden="true">14.</strong> The Standard Library</a></li><li class="chapter-item expanded "><a href="examples.html"><strong aria-hidden="true">15.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="guessing-game.html"><strong aria-hidden="true">15.1.</strong> Guessing Game</a></li><li class="chapter-item expanded "><a href="sorting.html"><strong aria-hidden="true">15.2.</strong> Sorting</a></li><li class="chapter-item expanded "><a href="strings.html"><strong aria-hidden="true">15.3.</strong> Strings</a></li></ol></li><li class="chapter-item expanded "><a href="a-note.html"><strong aria-hidden="true">16.</strong> A Note on Transpilation</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1133,7 +1133,7 @@ Here are some special signatures:</p>
 <span class="hljs-keyword">fn</span> <span class="hljs-title">new_vector</span>[<span class="hljs-title">T</span>] -> <span class="hljs-title">Vector</span>[<span class="hljs-title">T</span>] { ... }</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="let-statements"><a class="header" href="#let-statements">Let Statements</a></h1>
 <p>When dealing with more than 2 or 3 values, manipulating them on the stack
-becomes hard. In these cases, let<code>statements can be helpful. The</code>let` keyword
+becomes hard. In these cases, <code>let</code> statements can be helpful. The <code>let</code> keyword
 allows you to bind stack variables to names. For example, let's say we want to
 define a function that returns the positive root of a quadratic from its
 coefficients. It should take \(a\), \(b\) and \(c\) and return</p>
@@ -1204,9 +1204,13 @@ returns a single value and then flattens the expression. So</p>
 This is usually not that useful.</p>
 <pre><code class="language-plaintext hljs">    (<span class="hljs-number">3</span>*<span class="hljs-title">f</span>(<span class="hljs-number">1</span>, [<span class="hljs-number">3</span> <span class="hljs-number">2</span> +]))</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="allocations"><a class="header" href="#allocations">Allocations</a></h1>
+<p>TODO</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="assert-and-abort"><a class="header" href="#assert-and-abort"><code>assert</code> and <code>abort</code></a></h1>
+<p>TODO</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="function-pointers"><a class="header" href="#function-pointers">Function Pointers</a></h1>
+<p>TODO</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-standard-library"><a class="header" href="#the-standard-library">The Standard Library</a></h1>
+<p>TODO</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
 <p>Here are some small sample programs in Hop:</p>
 <ol>
@@ -1301,6 +1305,56 @@ Unicode-capable <code>String</code> struct:</p>
     <span class="hljs-title">free</span>
 }</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="a-note-on-transpilation"><a class="header" href="#a-note-on-transpilation">A Note on Transpilation</a></h1>
+<p>Unlike Porth, the stack exists only at compile time. When the compiler emits
+C code, all values are stored in variables. (Ironically, these values still live
+on a stack. But the C code uses a <em>call</em> stack.) To see how this works, consider
+the following program:</p>
+<pre><code class="language-plaintext hljs"><span class="hljs-keyword">fn</span> <span class="hljs-title">func</span> {
+    <span class="hljs-literal">true</span>    <span class="hljs-comment">// stack is [bool]</span>
+    <span class="hljs-number">1</span>       <span class="hljs-comment">// stack is [bool, int]</span>
+    <span class="hljs-literal">false</span>   <span class="hljs-comment">// stack is [bool, int, bool]</span>
+    <span class="hljs-title">putln</span>   <span class="hljs-comment">// stack is [bool, int]</span>
+    <span class="hljs-title">put</span>     <span class="hljs-comment">// stack is [bool]</span>
+    <span class="hljs-literal">true</span>    <span class="hljs-comment">// stack is [bool, bool]</span>
+    ~ ~     <span class="hljs-comment">// stack is []</span>
+}</code></pre>
+<p>The compiler keeps track of the <em>maximum</em> number of values of each type on the
+stack at any time. In this case, we have a maximum of 2 <code>bool</code>s and 1 <code>int</code>. So
+the C code looks like this:</p>
+<pre><code class="language-C">void func() {
+    bool bool1, bool2;
+    int int1;
+
+    bool1 = true;
+    int1 = 1;
+    bool2 = false;
+    putln(bool2);
+    put(int2);
+    bool2 = true;
+}
+</code></pre>
+<p>As you can see, the compiler allocates enough variables to hold all the stack
+values. Each time we push a value onto the stack, the compiler stores it in one
+of the variables. We we push <code>true</code> in the first like of the function <code>func</code>,
+it gets stored in the variable <code>bool1</code>. When we push <code>1</code>, it gets stored in
+the variable <code>int1</code>. When we push <code>false</code>, the variable <code>bool1</code> is already in use,
+so the values get stored in the variable <code>bool2</code>.</p>
+<p>When generating C code, the compiler keeps track of a <em>variable</em> stack instead
+of a <em>type</em> stack. The variable stack looks like this:</p>
+<pre><code class="language-plaintext hljs"><span class="hljs-keyword">fn</span> <span class="hljs-title">func</span> {
+    <span class="hljs-literal">true</span>    <span class="hljs-comment">// stack is [bool1]</span>
+    <span class="hljs-number">1</span>       <span class="hljs-comment">// stack is [bool1, int1]</span>
+    <span class="hljs-literal">false</span>   <span class="hljs-comment">// stack is [bool1, int1, bool2]</span>
+    <span class="hljs-title">putln</span>   <span class="hljs-comment">// stack is [bool1, int1]</span>
+    <span class="hljs-title">put</span>     <span class="hljs-comment">// stack is [bool1]</span>
+    <span class="hljs-literal">true</span>    <span class="hljs-comment">// stack is [bool1, bool2]</span>
+    ~ ~     <span class="hljs-comment">// stack is []</span>
+}</code></pre>
+<p>When a function is called (let's use <code>putln</code> as an example), the compiler looks
+at the stack and determines which variable to pass into the function. Before
+the <code>putln</code> call, the variable stack is <code>[bool1, int1, bool2]</code>. The compiler
+looks at the top of the stack and passes the variable <code>bool2</code> into the function
+<code>putln</code>.</p>
 
                     </main>
 
@@ -1319,6 +1373,20 @@ Unicode-capable <code>String</code> struct:</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
