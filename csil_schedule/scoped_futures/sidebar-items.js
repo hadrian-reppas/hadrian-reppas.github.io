@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["ScopedFutureWrapper"],"trait":["ScopedFuture","ScopedFutureExt"],"type":["ImpliedLifetimeBound","ScopedBoxFuture","ScopedLocalBoxFuture"]};

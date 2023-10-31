@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["CleaningLocation","ShiftStatus"],"struct":["CleaningInfo","Shift","ShiftBuilder","ShiftId"]};

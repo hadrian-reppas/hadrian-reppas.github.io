@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Methods used to execute queries."><title>RunQueryDsl in diesel_async - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-9ee3a5e31a2afa3e.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="diesel_async" data-themes="" data-resource-suffix="" data-rustdoc-version="1.75.0-nightly (608e9682f 2023-10-29)" data-channel="nightly" data-search-js="search-8fbf244ebcf71464.js" data-settings-js="settings-74424d7eec62a23e.js" ><script src="../static.files/storage-fec3eaa3851e447d.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-9dd44ab47b99a0fb.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-5d8b3c7633ad77ba.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc trait"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button></nav><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../diesel_async/index.html">diesel_async</a><span class="version">0.4.1</span></h2></div><h2 class="location"><a href="#">RunQueryDsl</a></h2><div class="sidebar-elems"><section><h3><a href="#provided-methods">Provided Methods</a></h3><ul class="block"><li><a href="#method.execute">execute</a></li><li><a href="#method.first">first</a></li><li><a href="#method.get_result">get_result</a></li><li><a href="#method.get_results">get_results</a></li><li><a href="#method.load">load</a></li><li><a href="#method.load_stream">load_stream</a></li></ul><h3><a href="#implementors">Implementors</a></h3></section><h2><a href="index.html">In crate diesel_async</a></h2></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Trait <a href="index.html">diesel_async</a>::<wbr><a class="trait" href="#">RunQueryDsl</a><button id="copy-path" title="Copy item path to clipboard"><img src="../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="src" href="../src/diesel_async/run_query_dsl/mod.rs.html#179-638">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub trait RunQueryDsl&lt;Conn&gt;: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html" title="trait core::marker::Sized">Sized</a> {
+    // Provided methods
+    fn <a href="#method.execute" class="fn">execute</a>&lt;'conn, 'query&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; Conn::<a class="associatedtype" href="trait.AsyncConnection.html#associatedtype.ExecuteFuture" title="type diesel_async::AsyncConnection::ExecuteFuture">ExecuteFuture</a>&lt;'conn, 'query&gt;
+       <span class="where">where Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+             Self: <a class="trait" href="methods/trait.ExecuteDsl.html" title="trait diesel_async::methods::ExecuteDsl">ExecuteDsl</a>&lt;Conn&gt; + 'query</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.load" class="fn">load</a>&lt;'query, 'conn, U&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; <a class="type" href="return_futures/type.LoadFuture.html" title="type diesel_async::return_futures::LoadFuture">LoadFuture</a>&lt;'conn, 'query, Self, Conn, U&gt;
+       <span class="where">where U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+             Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+             Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.load_stream" class="fn">load_stream</a>&lt;'conn, 'query, U&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; Self::<a class="associatedtype" href="methods/trait.LoadQuery.html#associatedtype.LoadFuture" title="type diesel_async::methods::LoadQuery::LoadFuture">LoadFuture</a>&lt;'conn&gt;
+       <span class="where">where Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+             U: 'conn,
+             Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.get_result" class="fn">get_result</a>&lt;'query, 'conn, U&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; <a class="type" href="return_futures/type.GetResult.html" title="type diesel_async::return_futures::GetResult">GetResult</a>&lt;'conn, 'query, Self, Conn, U&gt;
+       <span class="where">where U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'conn,
+             Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+             Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.get_results" class="fn">get_results</a>&lt;'query, 'conn, U&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; <a class="type" href="return_futures/type.LoadFuture.html" title="type diesel_async::return_futures::LoadFuture">LoadFuture</a>&lt;'conn, 'query, Self, Conn, U&gt;
+       <span class="where">where U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+             Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+             Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query</span> { ... }
+<span class="item-spacer"></span>    fn <a href="#method.first" class="fn">first</a>&lt;'query, 'conn, U&gt;(
+        self,
+        conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+    ) -&gt; <a class="type" href="return_futures/type.GetResult.html" title="type diesel_async::return_futures::GetResult">GetResult</a>&lt;'conn, 'query, <a class="type" href="../diesel/helper_types/type.Limit.html" title="type diesel::helper_types::Limit">Limit</a>&lt;Self&gt;, Conn, U&gt;
+       <span class="where">where U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'conn,
+             Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+             Self: <a class="trait" href="../diesel/query_dsl/limit_dsl/trait.LimitDsl.html" title="trait diesel::query_dsl::limit_dsl::LimitDsl">LimitDsl</a>,
+             <a class="type" href="../diesel/helper_types/type.Limit.html" title="type diesel::helper_types::Limit">Limit</a>&lt;Self&gt;: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'query</span> { ... }
+}</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Methods used to execute queries.</p>
+</div></details><h2 id="provided-methods" class="small-section-header">Provided Methods<a href="#provided-methods" class="anchor">§</a></h2><div class="methods"><details class="toggle method-toggle" open><summary><section id="method.execute" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#219-225">source</a><h4 class="code-header">fn <a href="#method.execute" class="fn">execute</a>&lt;'conn, 'query&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; Conn::<a class="associatedtype" href="trait.AsyncConnection.html#associatedtype.ExecuteFuture" title="type diesel_async::AsyncConnection::ExecuteFuture">ExecuteFuture</a>&lt;'conn, 'query&gt;<span class="where fmt-newline">where
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a> + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+    Self: <a class="trait" href="methods/trait.ExecuteDsl.html" title="trait diesel_async::methods::ExecuteDsl">ExecuteDsl</a>&lt;Conn&gt; + 'query,</span></h4></section></summary><div class="docblock"><p>Executes the given command, returning the number of rows affected.</p>
+<p><code>execute</code> is usually used in conjunction with <a href="../diesel/query_builder/functions/fn.insert_into.html" title="fn diesel::query_builder::functions::insert_into"><code>insert_into</code></a>,
+<a href="../diesel/query_builder/functions/fn.update.html" title="fn diesel::query_builder::functions::update"><code>update</code></a> and <a href="../diesel/query_builder/functions/fn.delete.html" title="fn diesel::query_builder::functions::delete"><code>delete</code></a> where the number of
+affected rows is often enough information.</p>
+<p>When asking the database to return data from a query, <a href="trait.RunQueryDsl.html#method.load" title="method diesel_async::RunQueryDsl::load"><code>load</code></a> should
+probably be used instead.</p>
+<h5 id="example"><a href="#example">Example</a></h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="kw">let </span>inserted_rows = insert_into(users)
+    .values(name.eq(<span class="string">&quot;Ruby&quot;</span>))
+    .execute(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="macro">assert_eq!</span>(<span class="number">1</span>, inserted_rows);
+
+<span class="kw">let </span>inserted_rows = insert_into(users)
+    .values(<span class="kw-2">&amp;</span><span class="macro">vec!</span>[name.eq(<span class="string">&quot;Jim&quot;</span>), name.eq(<span class="string">&quot;James&quot;</span>)])
+    .execute(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="macro">assert_eq!</span>(<span class="number">2</span>, inserted_rows);</code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.load" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#331-347">source</a><h4 class="code-header">fn <a href="#method.load" class="fn">load</a>&lt;'query, 'conn, U&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; <a class="type" href="return_futures/type.LoadFuture.html" title="type diesel_async::return_futures::LoadFuture">LoadFuture</a>&lt;'conn, 'query, Self, Conn, U&gt;<span class="where fmt-newline">where
+    U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+    Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query,</span></h4></section></summary><div class="docblock"><p>Executes the given query, returning a <a href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec"><code>Vec</code></a> with the returned rows.</p>
+<p>When using the query builder, the return type can be
+a tuple of the values, or a struct which implements <a href="../diesel/deserialize/trait.Queryable.html" title="trait diesel::deserialize::Queryable"><code>Queryable</code></a>.</p>
+<p>When this method is called on <a href="../diesel/query_builder/functions/fn.sql_query.html" title="fn diesel::query_builder::functions::sql_query"><code>sql_query</code></a>,
+the return type can only be a struct which implements <a href="../diesel/deserialize/trait.QueryableByName.html" title="trait diesel::deserialize::QueryableByName"><code>QueryableByName</code></a></p>
+<p>For insert, update, and delete operations where only a count of affected is needed,
+<a href="trait.RunQueryDsl.html#method.execute" title="method diesel_async::RunQueryDsl::execute"><code>execute</code></a> should be used instead.</p>
+<h5 id="examples"><a href="#examples">Examples</a></h5><h6 id="returning-a-single-field"><a href="#returning-a-single-field">Returning a single field</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::{RunQueryDsl, AsyncConnection};
+
+<span class="kw">let </span>data = users.select(name)
+    .load::&lt;String&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="macro">assert_eq!</span>(<span class="macro">vec!</span>[<span class="string">&quot;Sean&quot;</span>, <span class="string">&quot;Tess&quot;</span>], data);</code></pre></div>
+<h6 id="returning-a-tuple"><a href="#returning-a-tuple">Returning a tuple</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="kw">let </span>data = users
+    .load::&lt;(i32, String)&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="kw">let </span>expected_data = <span class="macro">vec!</span>[
+    (<span class="number">1</span>, String::from(<span class="string">&quot;Sean&quot;</span>)),
+    (<span class="number">2</span>, String::from(<span class="string">&quot;Tess&quot;</span>)),
+];
+<span class="macro">assert_eq!</span>(expected_data, data);</code></pre></div>
+<h6 id="returning-a-struct"><a href="#returning-a-struct">Returning a struct</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="attr">#[derive(Queryable, PartialEq, Debug)]
+</span><span class="kw">struct </span>User {
+    id: i32,
+    name: String,
+}
+
+<span class="kw">let </span>data = users
+    .load::&lt;User&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="kw">let </span>expected_data = <span class="macro">vec!</span>[
+    User { id: <span class="number">1</span>, name: String::from(<span class="string">&quot;Sean&quot;</span>) },
+    User { id: <span class="number">2</span>, name: String::from(<span class="string">&quot;Tess&quot;</span>) },
+];
+<span class="macro">assert_eq!</span>(expected_data, data);</code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.load_stream" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#473-480">source</a><h4 class="code-header">fn <a href="#method.load_stream" class="fn">load_stream</a>&lt;'conn, 'query, U&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; Self::<a class="associatedtype" href="methods/trait.LoadQuery.html#associatedtype.LoadFuture" title="type diesel_async::methods::LoadQuery::LoadFuture">LoadFuture</a>&lt;'conn&gt;<span class="where fmt-newline">where
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+    U: 'conn,
+    Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query,</span></h4></section></summary><div class="docblock"><p>Executes the given query, returning a <a href="../futures_core/stream/trait.Stream.html" title="trait futures_core::stream::Stream"><code>Stream</code></a> with the returned rows.</p>
+<p><strong>You should normally prefer to use <a href="trait.RunQueryDsl.html#method.load" title="method diesel_async::RunQueryDsl::load"><code>RunQueryDsl::load</code></a> instead</strong>. This method
+is provided for situations where the result needs to be collected into a different
+container than a <a href="https://doc.rust-lang.org/nightly/alloc/vec/struct.Vec.html" title="struct alloc::vec::Vec"><code>Vec</code></a></p>
+<p>When using the query builder, the return type can be
+a tuple of the values, or a struct which implements <a href="../diesel/deserialize/trait.Queryable.html" title="trait diesel::deserialize::Queryable"><code>Queryable</code></a>.</p>
+<p>When this method is called on <a href="../diesel/query_builder/functions/fn.sql_query.html" title="fn diesel::query_builder::functions::sql_query"><code>sql_query</code></a>,
+the return type can only be a struct which implements <a href="../diesel/deserialize/trait.QueryableByName.html" title="trait diesel::deserialize::QueryableByName"><code>QueryableByName</code></a></p>
+<p>For insert, update, and delete operations where only a count of affected is needed,
+<a href="trait.RunQueryDsl.html#method.execute" title="method diesel_async::RunQueryDsl::execute"><code>execute</code></a> should be used instead.</p>
+<h5 id="examples-1"><a href="#examples-1">Examples</a></h5><h6 id="returning-a-single-field-1"><a href="#returning-a-single-field-1">Returning a single field</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="kw">let </span>data = users.select(name)
+    .load_stream::&lt;String&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?
+    </span>.try_fold(Vec::new(), |<span class="kw-2">mut </span>acc, item| {
+         acc.push(item);
+         futures_util::future::ready(<span class="prelude-val">Ok</span>(acc))
+     })
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="macro">assert_eq!</span>(<span class="macro">vec!</span>[<span class="string">&quot;Sean&quot;</span>, <span class="string">&quot;Tess&quot;</span>], data);</code></pre></div>
+<h6 id="returning-a-tuple-1"><a href="#returning-a-tuple-1">Returning a tuple</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+<span class="kw">let </span>data = users
+    .load_stream::&lt;(i32, String)&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?
+    </span>.try_fold(Vec::new(), |<span class="kw-2">mut </span>acc, item| {
+         acc.push(item);
+         futures_util::future::ready(<span class="prelude-val">Ok</span>(acc))
+     })
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="kw">let </span>expected_data = <span class="macro">vec!</span>[
+    (<span class="number">1</span>, String::from(<span class="string">&quot;Sean&quot;</span>)),
+    (<span class="number">2</span>, String::from(<span class="string">&quot;Tess&quot;</span>)),
+];
+<span class="macro">assert_eq!</span>(expected_data, data);</code></pre></div>
+<h6 id="returning-a-struct-1"><a href="#returning-a-struct-1">Returning a struct</a></h6>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="attr">#[derive(Queryable, PartialEq, Debug)]
+</span><span class="kw">struct </span>User {
+    id: i32,
+    name: String,
+}
+
+<span class="kw">let </span>data = users
+    .load_stream::&lt;User&gt;(connection)
+    .<span class="kw">await</span><span class="question-mark">?
+    </span>.try_fold(Vec::new(), |<span class="kw-2">mut </span>acc, item| {
+         acc.push(item);
+         futures_util::future::ready(<span class="prelude-val">Ok</span>(acc))
+     })
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="kw">let </span>expected_data = <span class="macro">vec!</span>[
+    User { id: <span class="number">1</span>, name: String::from(<span class="string">&quot;Sean&quot;</span>) },
+    User { id: <span class="number">2</span>, name: String::from(<span class="string">&quot;Tess&quot;</span>) },
+];
+<span class="macro">assert_eq!</span>(expected_data, data);</code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.get_result" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#532-564">source</a><h4 class="code-header">fn <a href="#method.get_result" class="fn">get_result</a>&lt;'query, 'conn, U&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; <a class="type" href="return_futures/type.GetResult.html" title="type diesel_async::return_futures::GetResult">GetResult</a>&lt;'conn, 'query, Self, Conn, U&gt;<span class="where fmt-newline">where
+    U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'conn,
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+    Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query,</span></h4></section></summary><div class="docblock"><p>Runs the command, and returns the affected row.</p>
+<p><code>Err(NotFound)</code> will be returned if the query affected 0 rows. You can
+call <code>.optional()</code> on the result of this if the command was optional to
+get back a <code>Result&lt;Option&lt;U&gt;&gt;</code></p>
+<p>When this method is called on an insert, update, or delete statement,
+it will implicitly add a <code>RETURNING *</code> to the query,
+unless a returning clause was already specified.</p>
+<p>This method only returns the first row that was affected, even if more
+rows are affected.</p>
+<h5 id="example-1"><a href="#example-1">Example</a></h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+<span class="kw">let </span>inserted_row = insert_into(users)
+    .values(name.eq(<span class="string">&quot;Ruby&quot;</span>))
+    .get_result(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+<span class="macro">assert_eq!</span>((<span class="number">3</span>, String::from(<span class="string">&quot;Ruby&quot;</span>)), inserted_row);
+
+<span class="comment">// This will return `NotFound`, as there is no user with ID 4
+</span><span class="kw">let </span>update_result = update(users.find(<span class="number">4</span>))
+    .set(name.eq(<span class="string">&quot;Jim&quot;</span>))
+    .get_result::&lt;(i32, String)&gt;(connection)
+    .<span class="kw">await</span>;
+<span class="macro">assert_eq!</span>(<span class="prelude-val">Err</span>(diesel::NotFound), update_result);</code></pre></div>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.get_results" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#572-582">source</a><h4 class="code-header">fn <a href="#method.get_results" class="fn">get_results</a>&lt;'query, 'conn, U&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; <a class="type" href="return_futures/type.LoadFuture.html" title="type diesel_async::return_futures::LoadFuture">LoadFuture</a>&lt;'conn, 'query, Self, Conn, U&gt;<span class="where fmt-newline">where
+    U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a>,
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+    Self: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + 'query,</span></h4></section></summary><div class="docblock"><p>Runs the command, returning an <code>Vec</code> with the affected rows.</p>
+<p>This method is an alias for <a href="trait.RunQueryDsl.html#method.load" title="method diesel_async::RunQueryDsl::load"><code>load</code></a>, but with a name that makes more
+sense for insert, update, and delete statements.</p>
+</div></details><details class="toggle method-toggle" open><summary><section id="method.first" class="method"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#626-637">source</a><h4 class="code-header">fn <a href="#method.first" class="fn">first</a>&lt;'query, 'conn, U&gt;(
+    self,
+    conn: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'conn mut Conn</a>
+) -&gt; <a class="type" href="return_futures/type.GetResult.html" title="type diesel_async::return_futures::GetResult">GetResult</a>&lt;'conn, 'query, <a class="type" href="../diesel/helper_types/type.Limit.html" title="type diesel::helper_types::Limit">Limit</a>&lt;Self&gt;, Conn, U&gt;<span class="where fmt-newline">where
+    U: <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'conn,
+    Conn: <a class="trait" href="trait.AsyncConnection.html" title="trait diesel_async::AsyncConnection">AsyncConnection</a>,
+    Self: <a class="trait" href="../diesel/query_dsl/limit_dsl/trait.LimitDsl.html" title="trait diesel::query_dsl::limit_dsl::LimitDsl">LimitDsl</a>,
+    <a class="type" href="../diesel/helper_types/type.Limit.html" title="type diesel::helper_types::Limit">Limit</a>&lt;Self&gt;: <a class="trait" href="methods/trait.LoadQuery.html" title="trait diesel_async::methods::LoadQuery">LoadQuery</a>&lt;'query, Conn, U&gt; + <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> + 'query,</span></h4></section></summary><div class="docblock"><p>Attempts to load a single record.</p>
+<p>This method is equivalent to <code>.limit(1).get_result()</code></p>
+<p>Returns <code>Ok(record)</code> if found, and <code>Err(NotFound)</code> if no results are
+returned. If the query truly is optional, you can call <code>.optional()</code> on
+the result of this to get a <code>Result&lt;Option&lt;U&gt;&gt;</code>.</p>
+<h5 id="example-2"><a href="#example-2">Example:</a></h5>
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>diesel_async::RunQueryDsl;
+
+diesel::insert_into(users)
+    .values(<span class="kw-2">&amp;</span><span class="macro">vec!</span>[name.eq(<span class="string">&quot;Sean&quot;</span>), name.eq(<span class="string">&quot;Pascal&quot;</span>)])
+    .execute(connection)
+    .<span class="kw">await</span><span class="question-mark">?</span>;
+
+<span class="kw">let </span>first_name = users.order(id)
+    .select(name)
+    .first(connection)
+    .<span class="kw">await</span>;
+<span class="macro">assert_eq!</span>(<span class="prelude-val">Ok</span>(String::from(<span class="string">&quot;Sean&quot;</span>)), first_name);
+
+<span class="kw">let </span>not_found = users
+    .filter(name.eq(<span class="string">&quot;Foo&quot;</span>))
+    .first::&lt;(i32, String)&gt;(connection)
+    .<span class="kw">await</span>;
+<span class="macro">assert_eq!</span>(<span class="prelude-val">Err</span>(diesel::NotFound), not_found);</code></pre></div>
+</div></details></div><h2 id="implementors" class="small-section-header">Implementors<a href="#implementors" class="anchor">§</a></h2><div id="implementors-list"><section id="impl-RunQueryDsl%3CConn%3E-for-T" class="impl"><a class="src rightside" href="../src/diesel_async/run_query_dsl/mod.rs.html#640">source</a><a href="#impl-RunQueryDsl%3CConn%3E-for-T" class="anchor">§</a><h3 class="code-header">impl&lt;T, Conn&gt; <a class="trait" href="trait.RunQueryDsl.html" title="trait diesel_async::RunQueryDsl">RunQueryDsl</a>&lt;Conn&gt; for T</h3></section></div><script src="../trait.impl/diesel_async/run_query_dsl/trait.RunQueryDsl.js" async></script></section></div></main></body></html>

@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"fn":["exactly_one_is_true"],"struct":["DbShift","DbTutor"]};

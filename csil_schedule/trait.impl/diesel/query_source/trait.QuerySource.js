@@ -1,0 +1,4 @@
+(function() {var implementors = {
+"csil_schedule_api":[["impl <a class=\"trait\" href=\"diesel/query_source/trait.QuerySource.html\" title=\"trait diesel::query_source::QuerySource\">QuerySource</a> for <a class=\"struct\" href=\"csil_schedule_api/schema/shifts/struct.table.html\" title=\"struct csil_schedule_api::schema::shifts::table\">table</a>"],["impl <a class=\"trait\" href=\"diesel/query_source/trait.QuerySource.html\" title=\"trait diesel::query_source::QuerySource\">QuerySource</a> for <a class=\"struct\" href=\"csil_schedule_api/schema/tutors/struct.table.html\" title=\"struct csil_schedule_api::schema::tutors::table\">table</a>"]],
+"diesel":[]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
